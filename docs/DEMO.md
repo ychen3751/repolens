@@ -1,6 +1,8 @@
 # Three-minute demo script
 
-This is a recording plan; no video has been recorded yet. Run from the repository root. Use English narration and keep credentials off screen.
+[Watch the narrated English walkthrough](https://raw.githubusercontent.com/ychen3751/repolens/main/docs/media/RepoLens-Walkthrough.mp4) · [English subtitles](https://raw.githubusercontent.com/ychen3751/repolens/main/docs/media/RepoLens-English.srt)
+
+Use this longer script for an interview demo. Run from the repository root. Use English narration and keep credentials off screen.
 
 ## 0:00–0:30 — Problem and approach
 “RepoLens helps developers explore an unfamiliar Python repository. It retrieves source evidence and generates answers with traceable file and line references. I compare retrieval strategies and check citations rather than assuming a fluent answer is correct.”

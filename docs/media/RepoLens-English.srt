@@ -1,0 +1,66 @@
+1
+00:00:00,000 --> 00:00:04,902
+RepoLens helps a developer find answers inside an unfamiliar
+Python repository.
+
+2
+00:00:04,902 --> 00:00:10,050
+Here is a practical question: how do I test a Click command and
+inspect its output?
+
+3
+00:00:10,700 --> 00:00:14,514
+I search the usage guides with both keyword and semantic
+retrieval.
+
+4
+00:00:14,514 --> 00:00:21,807
+The first result shows the actual setup: import the runner,
+invoke the command, then assert on the exit code and captured
+output.
+
+5
+00:00:22,500 --> 00:00:28,609
+You choose the provider and bring your own API key: OpenAI,
+DeepSeek, or a compatible endpoint.
+
+6
+00:00:28,609 --> 00:00:31,472
+This example uses a saved DeepSeek response.
+
+7
+00:00:31,472 --> 00:00:34,272
+Each claim points to specific source lines.
+
+8
+00:00:34,272 --> 00:00:41,208
+RepoLens extracts the quotation directly from the indexed file,
+so the model does not have to copy the code.
+
+9
+00:00:41,900 --> 00:00:46,094
+The quality check confirms that the quotations match their
+source lines.
+
+10
+00:00:46,094 --> 00:00:48,104
+It also checks for expected terms.
+
+11
+00:00:48,104 --> 00:00:54,021
+A valid citation alone cannot prove a claim is correct, so
+support and completeness still need review.
+
+12
+00:00:54,700 --> 00:01:01,799
+On sixteen development questions, semantic and hybrid search
+both found labeled evidence in the top five for nine questions.
+
+13
+00:01:01,799 --> 00:01:04,298
+Keyword search did better at the top three.
+
+14
+00:01:04,298 --> 00:01:09,637
+These are development results, and you can reproduce the
+comparison in the GitHub repository.

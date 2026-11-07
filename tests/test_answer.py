@@ -42,6 +42,27 @@ class AnswerTest(unittest.TestCase):
             call.assert_not_called()
             self.assertEqual(answer['status'],'insufficient_evidence')
 
+    def test_compatible_chat_request(self):
+        content = {'status': 'insufficient_evidence', 'claims': [], 'limitation': 'Missing context.'}
+        response = {'choices': [{'finish_reason': 'stop', 'message': {'content': json.dumps(content)}}]}
+        with patch.dict('os.environ', COMPATIBLE_BASE_URL='https://example.org/v1/'), patch('answer.urllib.request.build_opener') as opener:
+            opener.return_value.open.return_value = io.BytesIO(json.dumps(response).encode())
+            result, _ = generate('question', self.evidence, 'chosen-model', 'test-key', 'compatible')
+            request = opener.return_value.open.call_args.args[0]
+            self.assertEqual(request.full_url, 'https://example.org/v1/chat/completions')
+            self.assertEqual(request.get_header('Authorization'), 'Bearer test-key')
+            body = json.loads(request.data)
+            self.assertEqual(body['model'], 'chosen-model')
+            self.assertEqual(body['response_format'], {'type': 'json_object'})
+            self.assertNotIn('thinking', body)
+            self.assertEqual(result, content)
+
+    def test_compatible_url_validation(self):
+        from answer import compatible_endpoint
+        for base in ['', 'http://example.org', 'https://user:pass@example.org', 'https://example.org/?key=x']:
+            with self.subTest(base=base), patch.dict('os.environ', COMPATIBLE_BASE_URL=base), self.assertRaises(ValueError):
+                compatible_endpoint()
+
     def test_context_budget_and_untrusted_data_separation(self):
         request=payload('question',self.evidence,'test-model')
         self.assertIn('untrusted',request['instructions'])

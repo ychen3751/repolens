@@ -4,13 +4,15 @@
 
 RepoLens is a command-line RAG portfolio project. It combines local repository indexing, keyword and semantic retrieval, and optional API-generated answers. English is the default answer language; Simplified Chinese and question-language matching are explicit options.
 
+[Watch the narrated English walkthrough](https://raw.githubusercontent.com/ychen3751/repolens/main/docs/media/RepoLens-Walkthrough.mp4) · [English subtitles](https://raw.githubusercontent.com/ychen3751/repolens/main/docs/media/RepoLens-English.srt)
+
 ## What works today
 
 - Index tracked Python and Markdown files without executing repository code.
 - Preserve file hashes, base commits, line ranges, and working-tree state.
 - Compare BM25, local semantic retrieval, and reciprocal-rank hybrid search.
 - Search the full repository or restrict questions to documentation with `--scope guide`.
-- Generate answers through DeepSeek or OpenAI, using your own API key.
+- Generate answers through OpenAI, DeepSeek, or a compatible Chat Completions endpoint, using your own API key.
 - Extract quotations from model-selected source ranges and validate their integrity.
 - Save successful runs and review language, completeness hints, and citations offline.
 
@@ -64,7 +66,21 @@ The pinned dependency snapshot was tested on macOS ARM64 with Python 3.12; other
 
 CLI help, status messages, and documentation are English. Source quotations, paths, code identifiers, and JSON keys are preserved. Language is a model instruction, not a hard guarantee; review saved answers. The English embedding model and mostly English corpus have not been evaluated comprehensively for Chinese retrieval. Other languages are not explicitly tested.
 
-## Generate a real answer with DeepSeek
+## Choose your generation API
+
+| CLI option | Export these environment variables | Model requirement |
+| --- | --- | --- |
+| `--provider openai` (default) | `OPENAI_API_KEY`, `OPENAI_MODEL` | Responses API with Structured Outputs |
+| `--provider deepseek` | `DEEPSEEK_API_KEY`, `DEEPSEEK_MODEL` | DeepSeek chat model supporting JSON output and the thinking option |
+| `--provider compatible` | `COMPATIBLE_API_KEY`, `COMPATIBLE_MODEL`, `COMPATIBLE_BASE_URL` | Chat Completions with bearer authentication, system messages and JSON-object output |
+
+Use the key and model ID issued by your chosen provider. For a compatible endpoint, set its base URL (for example, `https://your-provider.example/v1`). RepoLens appends `/chat/completions`. Remote servers require HTTPS. After exporting the three compatible settings, try:
+
+```bash
+.venv/bin/python answer.py --live --provider compatible "How do I test a command and inspect its output?" --scope guide
+```
+
+### Reproduce the DeepSeek example in the walkthrough
 
 Live generation sends your question and retrieved snippets to the selected provider and incurs API charges. Only use a corpus you are authorized to send. No provider credentials are included in this repository.
 
@@ -87,7 +103,7 @@ export DEEPSEEK_MODEL=deepseek-flash
 
 To request Chinese, add `--language zh` and choose a different output filename. Existing records are not overwritten. Keys are read from exported environment variables; `.env` files are not loaded automatically. The blank `.env.example` lists settings and contains no credentials.
 
-OpenAI is also supported: set `OPENAI_API_KEY` and `OPENAI_MODEL` to an accessible Responses/Structured Outputs model and use `--provider openai`. OpenAI remains the default provider if the flag is omitted. Neither provider has automatic retries or fallback calls.
+OpenAI is also supported: set `OPENAI_API_KEY` and `OPENAI_MODEL` to an accessible Responses/Structured Outputs model and use `--provider openai`. OpenAI remains the default provider if the flag is omitted. Requests go only to the selected provider.
 
 ## Review the answer
 
@@ -139,14 +155,14 @@ See the [comparison report](evaluation/retrieval-comparison-windowed.json), [gui
 - Independently review labels and reserve a held-out question set.
 - Run the remaining answer-quality cases, including abstention and adversarial comments.
 - Evaluate claim support separately from citation integrity.
-- Build a demo interface and record a walkthrough.
+- Build a graphical demo interface.
 - Review secrets, artifacts, and dependency portability before publication.
 
 The project has not been deployed. Publishing code does not grant others access to your model account; they must supply their own credentials for live generation.
 
 ## Demo and portfolio materials
 
-- [Three-minute demo script](docs/DEMO.md) — recording plan, not a finished video.
+- [Three-minute demo script](docs/DEMO.md).
 - [Portfolio description and interview notes](docs/PORTFOLIO.md) — scoped claims and resume drafts.
 - [Third-party notices](THIRD_PARTY_NOTICES.md) — attribution and license for Click excerpts.
 
