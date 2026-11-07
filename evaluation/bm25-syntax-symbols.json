@@ -1,0 +1,95 @@
+{
+  "symbol_context": true,
+  "search_scope": "source-only",
+  "source_root": "src",
+  "split": "development",
+  "label_review": "agent-reviewed source spans; awaiting user review; not held-out",
+  "commit": "ac0e297ec2d7d78455a7d18ce306996e668c4a85",
+  "questions": 8,
+  "hit_at_1": 0.5,
+  "hit_at_3": 0.75,
+  "hit_at_5": 0.75,
+  "mrr_at_5": 0.625,
+  "details": [
+    {
+      "id": "dev-01",
+      "question": "Where is command resolution implemented for a group?",
+      "rank_at_5": null,
+      "top_result": {
+        "path": "src/click/shell_completion.py",
+        "start_line": 347,
+        "end_line": 352
+      }
+    },
+    {
+      "id": "dev-02",
+      "question": "Where does the password option enable hidden input and confirmation?",
+      "rank_at_5": 1,
+      "top_result": {
+        "path": "src/click/decorators.py",
+        "start_line": 404,
+        "end_line": 418
+      }
+    },
+    {
+      "id": "dev-03",
+      "question": "Which decorator passes the current context as the first callback argument?",
+      "rank_at_5": 2,
+      "top_result": {
+        "path": "src/click/decorators.py",
+        "start_line": 100,
+        "end_line": 130
+      }
+    },
+    {
+      "id": "dev-04",
+      "question": "Where does a confirmation prompt parse yes and no responses?",
+      "rank_at_5": 2,
+      "top_result": {
+        "path": "src/click/decorators.py",
+        "start_line": 380,
+        "end_line": 401
+      }
+    },
+    {
+      "id": "dev-05",
+      "question": "Where is ANSI styling removed from a string?",
+      "rank_at_5": 1,
+      "top_result": {
+        "path": "src/click/termui.py",
+        "start_line": 768,
+        "end_line": 777
+      }
+    },
+    {
+      "id": "dev-06",
+      "question": "Where does colored output combine styling with echo?",
+      "rank_at_5": null,
+      "top_result": {
+        "path": "src/click/termui.py",
+        "start_line": 768,
+        "end_line": 777
+      }
+    },
+    {
+      "id": "dev-07",
+      "question": "How is the application configuration folder selected on Windows?",
+      "rank_at_5": 1,
+      "top_result": {
+        "path": "src/click/utils.py",
+        "start_line": 472,
+        "end_line": 518
+      }
+    },
+    {
+      "id": "dev-08",
+      "question": "Where does the yes option abort when confirmation is declined?",
+      "rank_at_5": 1,
+      "top_result": {
+        "path": "src/click/decorators.py",
+        "start_line": 380,
+        "end_line": 401
+      }
+    }
+  ]
+}

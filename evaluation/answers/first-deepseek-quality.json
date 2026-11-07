@@ -1,0 +1,21 @@
+{
+  "case_id": "answer-01",
+  "provenance": "Reconstructed from user-pasted terminal output on 2026-11-06; source quotes checked against local pinned Click checkout. Not raw API response.",
+  "citation_integrity": {
+    "passed": true,
+    "error": null
+  },
+  "expected_status_match": true,
+  "language_review_flag": true,
+  "missing_required_mentions": [
+    "CliRunner"
+  ],
+  "correctness": "manual_review_required",
+  "citation_support": "manual_review_required",
+  "completeness": "manual_review_required",
+  "review_rubric": [
+    "Explain how to import and instantiate CliRunner, not an unexplained runner fixture.",
+    "Show invocation and output/exit assertions supported by evidence.",
+    "Do not claim explicit arguments were passed when the cited call has none."
+  ]
+}

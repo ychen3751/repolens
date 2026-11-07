@@ -1,0 +1,554 @@
+{
+  "model": {
+    "name": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+  },
+  "index_sha256": "e3edfcfa62d0e005e1b8e578ec683c1a632f78d5598285385faa1601f56dabcc",
+  "dataset_sha256": "bf63f66932cb529a10d0ce1c7f682970a62405463805e05035f9112e2c000e51",
+  "packages": {
+    "sentence-transformers": "6.2.0",
+    "transformers": "5.22.2",
+    "torch": "2.15.0",
+    "numpy": "2.5.4"
+  },
+  "scope": "all files; same corpus and questions for every method",
+  "embedding_preparation_seconds": 0.04374091699719429,
+  "embedding_policy": "lossless-windows-mean-v1",
+  "document_cache_hit": true,
+  "query_cache_hits": 16,
+  "embedding_windows": 4033,
+  "split_chunks": 530,
+  "embedding_max_tokens": 256,
+  "truncated_chunks": 0,
+  "hybrid": {
+    "rrf_constant": 60,
+    "candidate_depth_per_method": 50
+  },
+  "methods": {
+    "bm25": {
+      "symbol_context": true,
+      "search_scope": "all",
+      "source_root": null,
+      "split": "development",
+      "label_review": "agent-reviewed source spans; user review pending; expanded development set, not held-out",
+      "commit": "ac0e297ec2d7d78455a7d18ce306996e668c4a85",
+      "questions": 16,
+      "hit_at_1": 0.1875,
+      "hit_at_3": 0.5,
+      "hit_at_5": 0.5,
+      "mrr_at_5": 0.3229166666666667,
+      "details": [
+        {
+          "id": "dev-01",
+          "question": "Where is command resolution implemented for a group?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "examples/naval/naval.py",
+            "start_line": 4,
+            "end_line": 12
+          }
+        },
+        {
+          "id": "dev-02",
+          "question": "Where does the password option enable hidden input and confirmation?",
+          "rank_at_5": 3,
+          "top_result": {
+            "path": "tests/test_termui.py",
+            "start_line": 1368,
+            "end_line": 1394
+          }
+        },
+        {
+          "id": "dev-03",
+          "question": "Which decorator passes the current context as the first callback argument?",
+          "rank_at_5": 2,
+          "top_result": {
+            "path": "src/click/decorators.py",
+            "start_line": 100,
+            "end_line": 130
+          }
+        },
+        {
+          "id": "dev-04",
+          "question": "Where does a confirmation prompt parse yes and no responses?",
+          "rank_at_5": 3,
+          "top_result": {
+            "path": "src/click/decorators.py",
+            "start_line": 380,
+            "end_line": 401
+          }
+        },
+        {
+          "id": "dev-05",
+          "question": "Where is ANSI styling removed from a string?",
+          "rank_at_5": 1,
+          "top_result": {
+            "path": "src/click/termui.py",
+            "start_line": 768,
+            "end_line": 777
+          }
+        },
+        {
+          "id": "dev-06",
+          "question": "Where does colored output combine styling with echo?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "examples/termui/termui.py",
+            "start_line": 14,
+            "end_line": 19
+          }
+        },
+        {
+          "id": "dev-07",
+          "question": "How is the application configuration folder selected on Windows?",
+          "rank_at_5": 1,
+          "top_result": {
+            "path": "src/click/utils.py",
+            "start_line": 472,
+            "end_line": 518
+          }
+        },
+        {
+          "id": "dev-08",
+          "question": "Where does the yes option abort when confirmation is declined?",
+          "rank_at_5": 1,
+          "top_result": {
+            "path": "src/click/decorators.py",
+            "start_line": 380,
+            "end_line": 401
+          }
+        },
+        {
+          "id": "dev-09",
+          "question": "How do I write a minimal greeting CLI with a repeat count and a prompted name?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "tests/test_options.py",
+            "start_line": 123,
+            "end_line": 127
+          }
+        },
+        {
+          "id": "dev-10",
+          "question": "How can I test a command and assert its captured output and exit status?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "tests/test_testing.py",
+            "start_line": 851,
+            "end_line": 884
+          }
+        },
+        {
+          "id": "dev-11",
+          "question": "How do I pass a subcommand when testing a command group?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "tests/test_basic.py",
+            "start_line": 113,
+            "end_line": 128
+          }
+        },
+        {
+          "id": "dev-12",
+          "question": "Why should CLI testing utilities not be used as thread-safe production helpers?",
+          "rank_at_5": 2,
+          "top_result": {
+            "path": "tests/test_testing.py",
+            "start_line": 525,
+            "end_line": 578
+          }
+        },
+        {
+          "id": "dev-13",
+          "question": "Where is a CLI error printed to standard error with an Error prefix?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "docs/commands-and-groups.md",
+            "start_line": 261,
+            "end_line": 340
+          }
+        },
+        {
+          "id": "dev-14",
+          "question": "How does option normalization preserve the leading dashes?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "tests/test_normalization.py",
+            "start_line": 6,
+            "end_line": 15
+          }
+        },
+        {
+          "id": "dev-15",
+          "question": "Where does opening a standard stream avoid closing it with the context manager?",
+          "rank_at_5": 2,
+          "top_result": {
+            "path": "src/click/core.py",
+            "start_line": 678,
+            "end_line": 705
+          }
+        },
+        {
+          "id": "dev-16",
+          "question": "How does the file helper defer opening a file until it is needed?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "src/click/types.py",
+            "start_line": 908,
+            "end_line": 953
+          }
+        }
+      ]
+    },
+    "semantic": {
+      "symbol_context": true,
+      "search_scope": "all",
+      "source_root": null,
+      "split": "development",
+      "label_review": "agent-reviewed source spans; user review pending; expanded development set, not held-out",
+      "commit": "ac0e297ec2d7d78455a7d18ce306996e668c4a85",
+      "questions": 16,
+      "hit_at_1": 0.375,
+      "hit_at_3": 0.4375,
+      "hit_at_5": 0.5625,
+      "mrr_at_5": 0.43125,
+      "details": [
+        {
+          "id": "dev-01",
+          "question": "Where is command resolution implemented for a group?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "examples/aliases/aliases.py",
+            "start_line": 70,
+            "end_line": 73
+          }
+        },
+        {
+          "id": "dev-02",
+          "question": "Where does the password option enable hidden input and confirmation?",
+          "rank_at_5": 1,
+          "top_result": {
+            "path": "src/click/decorators.py",
+            "start_line": 404,
+            "end_line": 418
+          }
+        },
+        {
+          "id": "dev-03",
+          "question": "Which decorator passes the current context as the first callback argument?",
+          "rank_at_5": 1,
+          "top_result": {
+            "path": "src/click/decorators.py",
+            "start_line": 28,
+            "end_line": 36
+          }
+        },
+        {
+          "id": "dev-04",
+          "question": "Where does a confirmation prompt parse yes and no responses?",
+          "rank_at_5": 1,
+          "top_result": {
+            "path": "src/click/termui.py",
+            "start_line": 289,
+            "end_line": 345
+          }
+        },
+        {
+          "id": "dev-05",
+          "question": "Where is ANSI styling removed from a string?",
+          "rank_at_5": 1,
+          "top_result": {
+            "path": "src/click/termui.py",
+            "start_line": 768,
+            "end_line": 777
+          }
+        },
+        {
+          "id": "dev-06",
+          "question": "Where does colored output combine styling with echo?",
+          "rank_at_5": 5,
+          "top_result": {
+            "path": "src/click/termui.py",
+            "start_line": 641,
+            "end_line": 720
+          }
+        },
+        {
+          "id": "dev-07",
+          "question": "How is the application configuration folder selected on Windows?",
+          "rank_at_5": 1,
+          "top_result": {
+            "path": "src/click/utils.py",
+            "start_line": 472,
+            "end_line": 518
+          }
+        },
+        {
+          "id": "dev-08",
+          "question": "Where does the yes option abort when confirmation is declined?",
+          "rank_at_5": 1,
+          "top_result": {
+            "path": "src/click/decorators.py",
+            "start_line": 380,
+            "end_line": 401
+          }
+        },
+        {
+          "id": "dev-09",
+          "question": "How do I write a minimal greeting CLI with a repeat count and a prompted name?",
+          "rank_at_5": 2,
+          "top_result": {
+            "path": "tests/typing/typing_simple_example.py",
+            "start_line": 8,
+            "end_line": 14
+          }
+        },
+        {
+          "id": "dev-10",
+          "question": "How can I test a command and assert its captured output and exit status?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "tests/test_commands.py",
+            "start_line": 98,
+            "end_line": 101
+          }
+        },
+        {
+          "id": "dev-11",
+          "question": "How do I pass a subcommand when testing a command group?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "tests/test_basic.py",
+            "start_line": 113,
+            "end_line": 128
+          }
+        },
+        {
+          "id": "dev-12",
+          "question": "Why should CLI testing utilities not be used as thread-safe production helpers?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "tests/test_stream_lifecycle.py",
+            "start_line": 1,
+            "end_line": 61
+          }
+        },
+        {
+          "id": "dev-13",
+          "question": "Where is a CLI error printed to standard error with an Error prefix?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "src/click/testing.py",
+            "start_line": 253,
+            "end_line": 285
+          }
+        },
+        {
+          "id": "dev-14",
+          "question": "How does option normalization preserve the leading dashes?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "tests/test_normalization.py",
+            "start_line": 6,
+            "end_line": 15
+          }
+        },
+        {
+          "id": "dev-15",
+          "question": "Where does opening a standard stream avoid closing it with the context manager?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "src/click/_compat.py",
+            "start_line": 159,
+            "end_line": 162
+          }
+        },
+        {
+          "id": "dev-16",
+          "question": "How does the file helper defer opening a file until it is needed?",
+          "rank_at_5": 5,
+          "top_result": {
+            "path": "docs/handling-files.md",
+            "start_line": 66,
+            "end_line": 101
+          }
+        }
+      ]
+    },
+    "hybrid": {
+      "symbol_context": true,
+      "search_scope": "all",
+      "source_root": null,
+      "split": "development",
+      "label_review": "agent-reviewed source spans; user review pending; expanded development set, not held-out",
+      "commit": "ac0e297ec2d7d78455a7d18ce306996e668c4a85",
+      "questions": 16,
+      "hit_at_1": 0.3125,
+      "hit_at_3": 0.4375,
+      "hit_at_5": 0.5625,
+      "mrr_at_5": 0.3927083333333333,
+      "details": [
+        {
+          "id": "dev-01",
+          "question": "Where is command resolution implemented for a group?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "src/click/core.py",
+            "start_line": 1694,
+            "end_line": 1761
+          }
+        },
+        {
+          "id": "dev-02",
+          "question": "Where does the password option enable hidden input and confirmation?",
+          "rank_at_5": 1,
+          "top_result": {
+            "path": "src/click/decorators.py",
+            "start_line": 404,
+            "end_line": 418
+          }
+        },
+        {
+          "id": "dev-03",
+          "question": "Which decorator passes the current context as the first callback argument?",
+          "rank_at_5": 1,
+          "top_result": {
+            "path": "src/click/decorators.py",
+            "start_line": 28,
+            "end_line": 36
+          }
+        },
+        {
+          "id": "dev-04",
+          "question": "Where does a confirmation prompt parse yes and no responses?",
+          "rank_at_5": 2,
+          "top_result": {
+            "path": "src/click/decorators.py",
+            "start_line": 380,
+            "end_line": 401
+          }
+        },
+        {
+          "id": "dev-05",
+          "question": "Where is ANSI styling removed from a string?",
+          "rank_at_5": 1,
+          "top_result": {
+            "path": "src/click/termui.py",
+            "start_line": 768,
+            "end_line": 777
+          }
+        },
+        {
+          "id": "dev-06",
+          "question": "Where does colored output combine styling with echo?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "examples/termui/termui.py",
+            "start_line": 14,
+            "end_line": 19
+          }
+        },
+        {
+          "id": "dev-07",
+          "question": "How is the application configuration folder selected on Windows?",
+          "rank_at_5": 1,
+          "top_result": {
+            "path": "src/click/utils.py",
+            "start_line": 472,
+            "end_line": 518
+          }
+        },
+        {
+          "id": "dev-08",
+          "question": "Where does the yes option abort when confirmation is declined?",
+          "rank_at_5": 1,
+          "top_result": {
+            "path": "src/click/decorators.py",
+            "start_line": 380,
+            "end_line": 401
+          }
+        },
+        {
+          "id": "dev-09",
+          "question": "How do I write a minimal greeting CLI with a repeat count and a prompted name?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "docs/documentation.md",
+            "start_line": 66,
+            "end_line": 145
+          }
+        },
+        {
+          "id": "dev-10",
+          "question": "How can I test a command and assert its captured output and exit status?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "tests/test_commands.py",
+            "start_line": 98,
+            "end_line": 101
+          }
+        },
+        {
+          "id": "dev-11",
+          "question": "How do I pass a subcommand when testing a command group?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "tests/test_basic.py",
+            "start_line": 113,
+            "end_line": 128
+          }
+        },
+        {
+          "id": "dev-12",
+          "question": "Why should CLI testing utilities not be used as thread-safe production helpers?",
+          "rank_at_5": 3,
+          "top_result": {
+            "path": "tests/test_stream_lifecycle.py",
+            "start_line": 337,
+            "end_line": 349
+          }
+        },
+        {
+          "id": "dev-13",
+          "question": "Where is a CLI error printed to standard error with an Error prefix?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "tests/test_testing.py",
+            "start_line": 273,
+            "end_line": 290
+          }
+        },
+        {
+          "id": "dev-14",
+          "question": "How does option normalization preserve the leading dashes?",
+          "rank_at_5": null,
+          "top_result": {
+            "path": "tests/test_normalization.py",
+            "start_line": 6,
+            "end_line": 15
+          }
+        },
+        {
+          "id": "dev-15",
+          "question": "Where does opening a standard stream avoid closing it with the context manager?",
+          "rank_at_5": 5,
+          "top_result": {
+            "path": "src/click/core.py",
+            "start_line": 678,
+            "end_line": 705
+          }
+        },
+        {
+          "id": "dev-16",
+          "question": "How does the file helper defer opening a file until it is needed?",
+          "rank_at_5": 4,
+          "top_result": {
+            "path": "src/click/types.py",
+            "start_line": 908,
+            "end_line": 953
+          }
+        }
+      ]
+    }
+  }
+}

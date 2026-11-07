@@ -1,0 +1,73 @@
+{
+  "provenance": "Reconstructed from user-pasted terminal output on 2026-11-06; source quotes checked against local pinned Click checkout. Not raw API response.",
+  "question": "How do I test a command and inspect its output?",
+  "provider": "deepseek",
+  "model": "deepseek-flash",
+  "answer": {
+    "status": "answered",
+    "claims": [
+      {
+        "text": "使用测试 runner 的 invoke 方法调用命令，然后检查 result 的输出与退出码，例如断言 \"Hello World!\" 在 result.output 中且 result.exit_code 为 0。",
+        "citations": [
+          {
+            "source_id": "S3",
+            "start_line": 12,
+            "end_line": 28,
+            "quote": "def test_basic_functionality(runner):\n    @click.command()\n    def cli():\n        \"\"\"Hello World!\"\"\"\n        click.echo(\"I EXECUTED\")\n\n    result = runner.invoke(cli, [\"--help\"])\n    assert not result.exception\n    assert \"Hello World!\" in result.output\n    assert \"Show this message and exit.\" in result.output\n    assert result.exit_code == 0\n    assert \"I EXECUTED\" not in result.output\n\n    result = runner.invoke(cli, [])\n    assert not result.exception\n    assert \"I EXECUTED\" in result.output\n    assert result.exit_code == 0"
+          }
+        ]
+      },
+      {
+        "text": "可调用命令并传入参数后，通过 result.exit_code 和 result.output 检查行为，例如断言退出码为 2 且输出包含 \"Show this message and exit.\"。",
+        "citations": [
+          {
+            "source_id": "S1",
+            "start_line": 98,
+            "end_line": 101,
+            "quote": "def test_command_no_args_is_help(runner):\n    result = runner.invoke(click.Command(\"test\", no_args_is_help=True))\n    assert result.exit_code == 2\n    assert \"Show this message and exit.\" in result.output"
+          }
+        ]
+      },
+      {
+        "text": "也可以用 runner.invoke 调用分组命令并检查输出，例如断言 \"nope\" 不在 result.output 中。",
+        "citations": [
+          {
+            "source_id": "S2",
+            "start_line": 794,
+            "end_line": 805,
+            "quote": "def test_hidden_command(runner):\n    @click.group()\n    def cli():\n        pass\n\n    @cli.command(hidden=True)\n    def nope():\n        pass\n\n    result = runner.invoke(cli, [\"--help\"])\n    assert result.exit_code == 0\n    assert \"nope\" not in result.output"
+          }
+        ]
+      }
+    ],
+    "limitation": ""
+  },
+  "evidence": [
+    {
+      "source_id": "S1",
+      "path": "tests/test_commands.py",
+      "start_line": 98,
+      "end_line": 101,
+      "text": "def test_command_no_args_is_help(runner):\n    result = runner.invoke(click.Command(\"test\", no_args_is_help=True))\n    assert result.exit_code == 2\n    assert \"Show this message and exit.\" in result.output"
+    },
+    {
+      "source_id": "S2",
+      "path": "tests/test_basic.py",
+      "start_line": 794,
+      "end_line": 805,
+      "text": "def test_hidden_command(runner):\n    @click.group()\n    def cli():\n        pass\n\n    @cli.command(hidden=True)\n    def nope():\n        pass\n\n    result = runner.invoke(cli, [\"--help\"])\n    assert result.exit_code == 0\n    assert \"nope\" not in result.output"
+    },
+    {
+      "source_id": "S3",
+      "path": "tests/test_basic.py",
+      "start_line": 12,
+      "end_line": 28,
+      "text": "def test_basic_functionality(runner):\n    @click.command()\n    def cli():\n        \"\"\"Hello World!\"\"\"\n        click.echo(\"I EXECUTED\")\n\n    result = runner.invoke(cli, [\"--help\"])\n    assert not result.exception\n    assert \"Hello World!\" in result.output\n    assert \"Show this message and exit.\" in result.output\n    assert result.exit_code == 0\n    assert \"I EXECUTED\" not in result.output\n\n    result = runner.invoke(cli, [])\n    assert not result.exception\n    assert \"I EXECUTED\" in result.output\n    assert result.exit_code == 0"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 820,
+    "completion_tokens": 543,
+    "total_tokens": 1363
+  }
+}

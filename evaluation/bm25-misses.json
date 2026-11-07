@@ -1,0 +1,210 @@
+[
+  {
+    "id": "dev-01",
+    "question": "Where is command resolution implemented for a group?",
+    "evidence": [
+      {
+        "path": "src/click/core.py",
+        "start_line": 2123,
+        "end_line": 2132
+      }
+    ],
+    "first_evidence_rank": 40,
+    "target_chunk": {
+      "path": "src/click/core.py",
+      "start_line": 2081,
+      "end_line": 2160,
+      "score": 0.8222190556486768,
+      "matched_query_terms": [
+        "command"
+      ],
+      "missing_query_terms": [
+        "group",
+        "implemented",
+        "resolution"
+      ]
+    },
+    "top_five": [
+      {
+        "path": "src/click/shell_completion.py",
+        "start_line": 326,
+        "end_line": 405,
+        "score": 6.5557088805312,
+        "matched_query_terms": [
+          "command",
+          "implemented"
+        ],
+        "missing_query_terms": [
+          "group",
+          "resolution"
+        ]
+      },
+      {
+        "path": "src/click/_termui_impl.py",
+        "start_line": 716,
+        "end_line": 795,
+        "score": 6.154992117825947,
+        "matched_query_terms": [
+          "resolution"
+        ],
+        "missing_query_terms": [
+          "command",
+          "group",
+          "implemented"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "start_line": 3381,
+        "end_line": 3460,
+        "score": 5.33123735254562,
+        "matched_query_terms": [
+          "group",
+          "resolution"
+        ],
+        "missing_query_terms": [
+          "command",
+          "implemented"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "start_line": 2146,
+        "end_line": 2225,
+        "score": 4.176609493876314,
+        "matched_query_terms": [
+          "command",
+          "group"
+        ],
+        "missing_query_terms": [
+          "implemented",
+          "resolution"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "start_line": 1691,
+        "end_line": 1770,
+        "score": 4.157012250089217,
+        "matched_query_terms": [
+          "command",
+          "group"
+        ],
+        "missing_query_terms": [
+          "implemented",
+          "resolution"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dev-06",
+    "question": "Where does colored output combine styling with echo?",
+    "evidence": [
+      {
+        "path": "src/click/termui.py",
+        "start_line": 808,
+        "end_line": 811
+      }
+    ],
+    "first_evidence_rank": 37,
+    "target_chunk": {
+      "path": "src/click/termui.py",
+      "start_line": 781,
+      "end_line": 860,
+      "score": 1.6117544071192702,
+      "matched_query_terms": [
+        "echo",
+        "with"
+      ],
+      "missing_query_terms": [
+        "colored",
+        "combine",
+        "output",
+        "styling"
+      ]
+    },
+    "top_five": [
+      {
+        "path": "src/click/termui.py",
+        "start_line": 716,
+        "end_line": 795,
+        "score": 6.837537352016439,
+        "matched_query_terms": [
+          "echo",
+          "styling",
+          "with"
+        ],
+        "missing_query_terms": [
+          "colored",
+          "combine",
+          "output"
+        ]
+      },
+      {
+        "path": "src/click/_termui_impl.py",
+        "start_line": 326,
+        "end_line": 405,
+        "score": 5.7496928792360915,
+        "matched_query_terms": [
+          "echo",
+          "output",
+          "styling",
+          "with"
+        ],
+        "missing_query_terms": [
+          "colored",
+          "combine"
+        ]
+      },
+      {
+        "path": "src/click/core.py",
+        "start_line": 521,
+        "end_line": 600,
+        "score": 5.445022232526307,
+        "matched_query_terms": [
+          "output",
+          "styling",
+          "with"
+        ],
+        "missing_query_terms": [
+          "colored",
+          "combine",
+          "echo"
+        ]
+      },
+      {
+        "path": "src/click/termui.py",
+        "start_line": 651,
+        "end_line": 730,
+        "score": 5.2843201703050156,
+        "matched_query_terms": [
+          "echo",
+          "styling",
+          "with"
+        ],
+        "missing_query_terms": [
+          "colored",
+          "combine",
+          "output"
+        ]
+      },
+      {
+        "path": "src/click/termui.py",
+        "start_line": 586,
+        "end_line": 665,
+        "score": 5.224849468592586,
+        "matched_query_terms": [
+          "echo",
+          "styling",
+          "with"
+        ],
+        "missing_query_terms": [
+          "colored",
+          "combine",
+          "output"
+        ]
+      }
+    ]
+  }
+]

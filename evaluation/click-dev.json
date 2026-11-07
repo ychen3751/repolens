@@ -1,0 +1,103 @@
+{
+  "split": "development",
+  "label_review": "agent-reviewed source spans; awaiting user review; not held-out",
+  "commit": "ac0e297ec2d7d78455a7d18ce306996e668c4a85",
+  "questions": [
+    {
+      "id": "dev-01",
+      "question": "Where is command resolution implemented for a group?",
+      "evidence": [
+        {
+          "path": "src/click/core.py",
+          "start_line": 2123,
+          "end_line": 2132
+        }
+      ],
+      "rationale": "Group.resolve_command looks up the command and retries normalized names."
+    },
+    {
+      "id": "dev-02",
+      "question": "Where does the password option enable hidden input and confirmation?",
+      "evidence": [
+        {
+          "path": "src/click/decorators.py",
+          "start_line": 414,
+          "end_line": 418
+        }
+      ],
+      "rationale": "password_option sets prompt, confirmation_prompt, and hide_input."
+    },
+    {
+      "id": "dev-03",
+      "question": "Which decorator passes the current context as the first callback argument?",
+      "evidence": [
+        {
+          "path": "src/click/decorators.py",
+          "start_line": 33,
+          "end_line": 36
+        }
+      ],
+      "rationale": "pass_context wraps the callback with get_current_context()."
+    },
+    {
+      "id": "dev-04",
+      "question": "Where does a confirmation prompt parse yes and no responses?",
+      "evidence": [
+        {
+          "path": "src/click/termui.py",
+          "start_line": 329,
+          "end_line": 336
+        }
+      ],
+      "rationale": "confirm converts y/yes and n/no to booleans."
+    },
+    {
+      "id": "dev-05",
+      "question": "Where is ANSI styling removed from a string?",
+      "evidence": [
+        {
+          "path": "src/click/termui.py",
+          "start_line": 768,
+          "end_line": 777
+        }
+      ],
+      "rationale": "unstyle delegates to strip_ansi."
+    },
+    {
+      "id": "dev-06",
+      "question": "Where does colored output combine styling with echo?",
+      "evidence": [
+        {
+          "path": "src/click/termui.py",
+          "start_line": 808,
+          "end_line": 811
+        }
+      ],
+      "rationale": "secho applies style then echo."
+    },
+    {
+      "id": "dev-07",
+      "question": "How is the application configuration folder selected on Windows?",
+      "evidence": [
+        {
+          "path": "src/click/utils.py",
+          "start_line": 503,
+          "end_line": 508
+        }
+      ],
+      "rationale": "get_app_dir selects APPDATA or LOCALAPPDATA with a home fallback."
+    },
+    {
+      "id": "dev-08",
+      "question": "Where does the yes option abort when confirmation is declined?",
+      "evidence": [
+        {
+          "path": "src/click/decorators.py",
+          "start_line": 389,
+          "end_line": 391
+        }
+      ],
+      "rationale": "confirmation_option callback aborts on false."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "run": "new-question",
+    "seconds": 3.298141208011657,
+    "document_cache_hit": true,
+    "query_cache_hits": 0,
+    "model_loaded": true,
+    "windows": 4033,
+    "split_chunks": 530
+  },
+  {
+    "run": "repeat-question",
+    "seconds": 0.01862766605336219,
+    "document_cache_hit": true,
+    "query_cache_hits": 1,
+    "model_loaded": false,
+    "windows": 4033,
+    "split_chunks": 530
+  }
+]
